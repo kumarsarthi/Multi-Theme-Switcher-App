@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* Theme-specific styles */
+.theme-theme1 {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.theme-theme2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.theme-theme3 {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.theme-theme3 .font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+/* Custom scrollbar for theme 2 */
+.theme-theme2::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-theme2::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.theme-theme2::-webkit-scrollbar-thumb {
+  background: #6B7280;
+  border-radius: 4px;
+}
+
+.theme-theme2::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Smooth transitions for all themes */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+.theme-theme2 button:focus-visible,
+.theme-theme2 input:focus-visible,
+.theme-theme2 textarea:focus-visible,
+.theme-theme2 select:focus-visible {
+  outline-color: #60A5FA;
+}
+
+.theme-theme3 button:focus-visible,
+.theme-theme3 input:focus-visible,
+.theme-theme3 textarea:focus-visible,
+.theme-theme3 select:focus-visible {
+  outline-color: #A855F7;
+}
+
+/* Improved mobile responsiveness */
+@media (max-width: 768px) {
+  .theme-theme2 .w-64 {
+    width: 100%;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .theme-theme1 {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
+  
+  .theme-theme1 .bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .theme-theme1,
+  .theme-theme2,
+  .theme-theme3 {
+    background: white !important;
+    color: black !important;
+  }
+  
+  header,
+  .no-print {
+    display: none !important;
+  }
+}
