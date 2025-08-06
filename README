@@ -20,6 +20,31 @@ ThemeCraft is a React + TypeScript application that demonstrates dynamic multi-t
 
 ---
 
+## Getting Started
+
+Follow these steps to start the project from the repository:
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/kumarsarthi/Multi-Theme-Switcher-App
+   cd multi-theme-switcher-app
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+
+4. **Open the app:**
+   - Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
 ## Folder Structure
 
 ```
@@ -111,9 +136,3 @@ src/
 ## External APIs
 
 - **Fake Store API:** Used for product data in `useApi.ts`
-
----
-
-## License
-
-MIT
